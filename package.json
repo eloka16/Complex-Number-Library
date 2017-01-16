@@ -1,0 +1,23 @@
+{
+  "name": "complex_number_library",
+  "version": "1.0.0",
+  "description": "Performs mathematical operations involving complex numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eloka16/Complex-Number-Library.git"
+  },
+  "keywords": [
+    "Complex",
+    "numbers"
+  ],
+  "author": "Henry Chukwu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eloka16/Complex-Number-Library/issues"
+  },
+  "homepage": "https://github.com/eloka16/Complex-Number-Library#readme"
+}
