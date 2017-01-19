@@ -161,10 +161,10 @@ var getDataOne = function(){
     a = new complex(real, img);
     console.log(a);
     getOptionTwo(function(){
-				option = arguments['0'].secondNumber;	
-				real = Number(arguments['0'].real);
-				img = Number(arguments['0'].img);
-				getDataTwo();
+			option = arguments['0'].secondNumber;	
+			real = Number(arguments['0'].real);
+			img = Number(arguments['0'].img);
+			getDataTwo();
 			});
    
 
