@@ -177,5 +177,58 @@ var getDataOne = function(){
 var getDataTwo = function(){
     b = new complex(real, img);
     console.log(b);
-
+    showOperations();
 }
+
+var showOperations = function(){	
+	var question =	[
+		  {
+			name: 'op',
+		   	type: 'list',
+		    message: 'Select the operation to perform:',
+		    choices: ['Add','Subtract','Multiply','Divide','EXIT']
+		  }
+		];
+
+		inquirer.prompt(question).then(function(){			
+			var value = arguments[0].op;
+			switch(value){
+				//Check for rules before calling the appropriate functions
+				case 'Add':				                        
+						result = a.add(b);
+						displayResult()
+										
+					break;
+				case 'Subtract':
+					
+					
+						result = a.sub(b);
+						displayResult()
+					
+					break;
+				case 'Multiply':
+					
+					
+						result = a.multiply(b);
+						displayResult();
+					
+					break;
+				case 'EXIT':
+					console.log('Goodbye... ');
+					process.exit(0);
+					break;
+														
+						
+			}
+		});
+	
+}
+
+var displayResult = function(){
+	console.log('***Here is the result of the operation')
+	console.log(result);
+}
+
+//Begin the application
+
+welcome();
