@@ -51,9 +51,10 @@ var welcome = function(){
 			var value = arguments[0].load;
 			switch(value){
 				case 'No':
-					//Read File;
-					readFile();
+					console.log('Thank you for stoping by... ');
+					process.exit(0);
 					break;
+
 				case 'Yes':
 					//Get input
 					getOptionOne(function(){
@@ -74,10 +75,9 @@ var getOptionOne = function(callback){
 	      name: 'firstNumber',
 	      type: 'input',
 	      message: 'FIRST Complex Number:\n' +
-      			'---1: Give input from Keyboard\n'+
-      			'---2: Generate input from the system\n>:',
+      			'---1: Give input from Keyboard\n',
 	      validate: function( value ) {
-    		   if (value==1 || value==2) {
+    		   if (value==1) {
 	    	     return true;
 	        	} else {
 		          return 'Enter correct choice';
@@ -120,10 +120,9 @@ var getOptionTwo = function(callback){
 	      name: 'secondNumber',
 	      type: 'input',
 	      message: 'SECOND Inut:\n' +
-      			'---1: Give input from Keyboard\n'+
-      			'---2: Generate input from the system\n>:',
+      			'---1: Give input from Keyboard\n',
 	      validate: function( value ) {
-    		   if (value==1 || value==2) {
+    		   if (value==1) {
 	    	     return true;
 	        	} else {
 		          return 'Enter valid choice';
@@ -186,7 +185,7 @@ var showOperations = function(){
 			name: 'op',
 		   	type: 'list',
 		    message: 'Select the operation to perform:',
-		    choices: ['Add','Subtract','Multiply','Divide','EXIT']
+		    choices: ['Add','Subtract','Multiply','Divide','Equals','EXIT']
 		  }
 		];
 
@@ -213,6 +212,23 @@ var showOperations = function(){
 						displayResult();
 					
 					break;
+
+					case 'Divide':
+					
+					
+						result = a.divide(b);
+						displayResult();
+					
+					break;
+
+					case 'Equals':
+					
+					
+						result = a.equals(b);
+						displayResult();
+					
+					break;
+
 				case 'EXIT':
 					console.log('Goodbye... ');
 					process.exit(0);
@@ -227,6 +243,40 @@ var showOperations = function(){
 var displayResult = function(){
 	console.log('***Here is the result of the operation')
 	console.log(result);
+
+	//Prompt user for further operations
+	var question =	[
+		  {
+			name: 'more',
+		   	type: 'list',
+		    message: 'Do you want to perform more operations?:',
+		    choices: ['Yes','No']
+		  }
+		];
+
+		inquirer.prompt(question).then(function(){
+			var value = arguments[0].more;
+			switch(value){
+
+				case 'No':	
+				
+									console.log('Goodbye... ');
+									process.exit(0);
+									break;
+				case 'Yes':
+					getOptionOne(function(){
+						option = arguments['0'].firstNumber;	
+						real = Number(arguments['0'].real);
+						img = Number(arguments['0'].img);
+						//Use option, real and imaginary numbers to get first number
+						getDataOne();	
+					});
+
+				
+							}
+						});
+
+						
 }
 
 //Begin the application
