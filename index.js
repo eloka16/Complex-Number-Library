@@ -42,7 +42,7 @@ var welcome = function(){
 		  {
 			name: 'load',
 		   	type: 'list',
-		    message: 'Do you want to LOAD saved variables?:',
+		    message: 'Do you want to perform complex mathematical operations?:',
 		    choices: ['Yes','No']
 		  }
 		];
@@ -50,11 +50,11 @@ var welcome = function(){
 		inquirer.prompt(question).then(function(){
 			var value = arguments[0].load;
 			switch(value){
-				case 'Yes':
+				case 'No':
 					//Read File;
 					readFile();
 					break;
-				case 'No':
+				case 'Yes':
 					//Get input
 					getOptionOne(function(){
 						option = arguments['0'].firstNumber;	
