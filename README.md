@@ -43,12 +43,8 @@ Node
 
 You can git clone the repo on your system, then run node index.js to start up the command line.
 
+Then follow the prompts
 
-
-```js
-var Complex = require('complex');
-console.log(new Complex(3, 4).magnitude()); // 5 the absolute/magnitude value of 3+4i
-```
 
 Testing
 -------
@@ -77,10 +73,6 @@ var complex = new complex(real, img);
 
 
 
-#### Arguments:
-
-1. real (number) the real part of the number
-2. img (number) the imaginary part of the number
 
 
 
