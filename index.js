@@ -46,4 +46,136 @@ var welcome = function(){
 		    choices: ['Yes','No']
 		  }
 		];
+
+		inquirer.prompt(question).then(function(){
+			var value = arguments[0].load;
+			switch(value){
+				case 'Yes':
+					//Read File;
+					readFile();
+					break;
+				case 'No':
+					//Get input
+					getOptionOne(function(){
+						option = arguments['0'].firstNumber;	
+						real = Number(arguments['0'].real);
+						img = Number(arguments['0'].img);
+						//Use option, real and imaginary numbers to get first number
+						getDataOne();	
+					});
+			}
+		});
+}
+
+//Display options for Complex Input
+var getOptionOne = function(callback){
+	var questions = [
+	    {
+	      name: 'firstNumber',
+	      type: 'input',
+	      message: 'FIRST Complex Number:\n' +
+      			'---1: Give input from Keyboard\n'+
+      			'---2: Generate input from the system\n>:',
+	      validate: function( value ) {
+    		   if (value==1 || value==2) {
+	    	     return true;
+	        	} else {
+		          return 'Enter correct choice';
+		        }
+	      }
+	    },
+	    {
+	      name: 'real',
+	      type: 'input',
+	      message: 'Enter real number:',
+	      validate: function( value ) {
+	        if (!isNaN(value)) {
+	          return true;
+	        } else {
+	          return 'Please enter valid input';
+	        }
+	      }
+	    },
+	    {
+	      name: 'img',
+	      type: 'input',
+	      message: 'Enter imaginary number:',
+	      validate: function(value) {
+	        if (!isNaN(value)) {
+	          return true;
+	        } else {
+	          return 'Please enter valid input';
+	        }
+	      }
+	    }
+	  ];
+
+	inquirer.prompt(questions).then(callback);
+}
+
+//Display options for Number Input
+var getOptionTwo = function(callback){
+		var questions = [
+	    {
+	      name: 'secondNumber',
+	      type: 'input',
+	      message: 'SECOND Inut:\n' +
+      			'---1: Give input from Keyboard\n'+
+      			'---2: Generate input from the system\n>:',
+	      validate: function( value ) {
+    		   if (value==1 || value==2) {
+	    	     return true;
+	        	} else {
+		          return 'Enter valid choice';
+		        }
+	      }
+	    },
+	    {
+	      name: 'real',
+	      type: 'input',
+	      message: 'Enter real number:',
+	      validate: function( value ) {
+	        if (!isNaN(value)) {
+	          return true;
+	        } else {
+	          return 'Please enter valid input';
+	        }
+	      }
+	    },
+	    {
+	      name: 'img',
+	      type: 'input',
+	      message: 'Enter real number:',
+	      validate: function(value) {
+	        if (!isNaN(value)) {
+	          return true;
+	        } else {
+	          return 'Please enter valid input';
+	        }
+	      }
+	    }
+	  ];
+
+	inquirer.prompt(questions).then(callback);	
+}
+
+//Get input 
+var getDataOne = function(){
+    a = new complex(real, img);
+    console.log(a);
+    getOptionTwo(function(){
+				option = arguments['0'].secondNumber;	
+				real = Number(arguments['0'].real);
+				img = Number(arguments['0'].img);
+				getDataTwo();
+			});
+   
+
+}
+
+
+var getDataTwo = function(){
+    b = new complex(real, img);
+    console.log(b);
+
 }
