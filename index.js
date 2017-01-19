@@ -9,9 +9,7 @@ var chalk       = require('chalk');
 var clear       = require('clear');
 var figlet      = require('figlet');
 var inquirer    = require('inquirer');
-var fs			= require('fs');
 
-const program = require('commander');
 
 var a;
 var b;
