@@ -40,13 +40,9 @@ Node
 
 You can git clone the repo on your system, install dependencies then run node index.js on command line to start up the library:
 
-	# install dependencies
+	# run
 	
 	npm install
-	npm install chalk
-	npm install clear
-	npm install figlet
-	npm install inquirer
 	
 
 
