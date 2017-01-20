@@ -159,7 +159,9 @@ var getOptionTwo = function(callback){
 //Get input 
 var getDataOne = function(){
     a = new complex(real, img);
+		console.log('***First Complex')
     console.log(a);
+		console.log('\n');
     getOptionTwo(function(){
 			option = arguments['0'].secondNumber;	
 			real = Number(arguments['0'].real);
@@ -173,7 +175,9 @@ var getDataOne = function(){
 
 var getDataTwo = function(){
     b = new complex(real, img);
+		console.log('***Second Complex')
     console.log(b);
+		console.log('\n')
     showOperations();
 }
 
