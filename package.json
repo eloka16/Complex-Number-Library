@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/eloka16/Complex-Number-Library/issues"
   },
-  "homepage": "https://github.com/eloka16/Complex-Number-Library#readme"
+  "homepage": "https://github.com/eloka16/Complex-Number-Library#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "clear": "0.0.1",
+    "figlet": "^1.2.0",
+    "inquirer": "^2.0.0"
+  }
 }
