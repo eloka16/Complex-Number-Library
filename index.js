@@ -183,7 +183,7 @@ var showOperations = function(){
 			name: 'op',
 		   	type: 'list',
 		    message: 'Select the operation to perform:',
-		    choices: ['Add','Subtract','Multiply','Divide','Equals','EXIT']
+		    choices: ['Add','Subtract','Multiply','Divide','Equals','String','EXIT']
 		  }
 		];
 
@@ -196,47 +196,84 @@ var showOperations = function(){
 						displayResult()
 										
 					break;
-				case 'Subtract':
-					
-					
+				case 'Subtract':										
 						result = a.sub(b);
-						displayResult()
-					
+						displayResult()					
 					break;
-				case 'Multiply':
-					
-					
+				case 'Multiply':									
 						result = a.multiply(b);
 						displayResult();
 					
 					break;
 
-					case 'Divide':
-					
-					
+					case 'Divide':										
 						result = a.divide(b);
 						displayResult();
 					
 					break;
 
-					case 'Equals':
-					
-					
+					case 'Equals':										
 						result = a.equals(b);
 						displayResult();
 					
 					break;
 
-				case 'EXIT':
-					console.log('Goodbye... ');
-					process.exit(0);
-					break;
-														
-						
+					case 'EXIT':
+						console.log('Goodbye... ');
+						process.exit(0);
+					break;				
+					case 	'String' :
+					var question = [{
+						name : 'st',
+						type : 'list',
+						message : 'select the operation to perform',
+						choices : ['Add','Subtract','Multiply','Divide','Equals','EXIT']
+					}];
+
+					inquirer.prompt(question).then(function(){			
+						var value = arguments[0].st;
+						switch(value){
+				//Check for rules before calling the appropriate functions
+						case 'Add':				                        
+							result = (a.add(b)).toString();
+							displayResult()
+										
+						break;
+
+						case 'Subtract':					
+						result = (a.sub(b)).toString();
+						displayResult()
+					
+						break;
+
+						case 'Multiply':										
+							result = (a.multiply(b)).toString();
+							displayResult();
+					
+						break;
+
+						case 'Divide':					
+						result = (a.divide(b)).toString();
+						displayResult();
+					
+						break;
+
+						case 'Equals':										
+						result = (a.equals(b)).toString();
+						displayResult();
+					
+						break;
+
+						case 'EXIT':
+							console.log('Goodbye... ');
+							process.exit(0);
+						break;
+						}
+						});																				
+
 			}
 		});
-	
-}
+};
 
 var displayResult = function(){
 	console.log('***Here is the result of the operation')
