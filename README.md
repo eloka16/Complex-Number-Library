@@ -38,7 +38,7 @@ This use is also extended into digital signal processing and digital image proce
 Node
 -------
 
-You can git clone the repo on your system, install dependencies then run node index.js to start up the command line:
+You can git clone the repo on your system, install dependencies then run node index.js on command line to start up the library:
 
 	# install dependencies
 	
