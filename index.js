@@ -227,7 +227,7 @@ var showOperations = function(){
 						name : 'st',
 						type : 'list',
 						message : 'select the operation to perform',
-						choices : ['Add','Subtract','Multiply','Divide','Equals','EXIT']
+						choices : ['Add','Subtract','Multiply','Divide','EXIT']
 					}];
 
 					inquirer.prompt(question).then(function(){			
@@ -254,12 +254,6 @@ var showOperations = function(){
 
 						case 'Divide':					
 						result = (a.divide(b)).toString();
-						displayResult();
-					
-						break;
-
-						case 'Equals':										
-						result = (a.equals(b)).toString();
 						displayResult();
 					
 						break;
